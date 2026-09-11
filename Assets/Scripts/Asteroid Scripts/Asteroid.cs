@@ -22,7 +22,7 @@ public class Asteroid : MonoBehaviour
         {
             Debug.Log("You Have Been Hit");
 
-            Destroy(collision.gameObject);
+            GameManager.Instance.PlayerDied();
         }
     }
 
