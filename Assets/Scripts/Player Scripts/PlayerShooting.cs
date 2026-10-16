@@ -54,6 +54,13 @@ public class PlayerShooting : MonoBehaviour
         {
             Debug.Log ("Hit: " + hit.collider.name);
 
+            EnemyAI enemy = hit.collider.GetComponent<EnemyAI>();
+            if (enemy != null)
+            {
+                enemy.Die();
+                return; 
+            }
+
             Asteroid asteroid = hit.collider.GetComponent<Asteroid>();
             if (asteroid != null)
             {
